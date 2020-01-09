@@ -19,6 +19,9 @@ run_rsync()
 sudo $setup_dir/dax_config.sh
 run_rsync dax
 
+sudo $setup_dir/xfs_config.sh
+run_rsync xfs
+
 sudo $setup_dir/nova_config.sh
 run_rsync nova
 

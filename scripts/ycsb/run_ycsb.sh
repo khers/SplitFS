@@ -33,6 +33,9 @@ run_ycsb()
 sudo $setup_dir/dax_config.sh
 run_ycsb dax
 
+sudo $setup_dir/xfs_config.sh
+run_ycsb xfs
+
 sudo $setup_dir/nova_relaxed_config.sh
 run_ycsb relaxed_nova
 

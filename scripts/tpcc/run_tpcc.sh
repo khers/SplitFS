@@ -19,6 +19,9 @@ run_tpcc()
 sudo $setup_dir/dax_config.sh
 run_tpcc dax
 
+sudo $setup_dir/xfs_config.sh
+run_tpcc xfs
+
 sudo $setup_dir/nova_relaxed_config.sh
 run_tpcc relaxed_nova
 
