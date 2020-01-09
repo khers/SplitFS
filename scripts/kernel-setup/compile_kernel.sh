@@ -19,9 +19,8 @@ cd $kbuild_path
 make -f Makefile.setup .config
 make -f Makefile.setup
 sleep 10
-make -j $threads # compile kernel
-sleep 10
-sudo make modules_install ; sudo make install # install modules
+make -j $threads bindeb-pkg # compile kernel package
+
 
 cd $script_path
 

@@ -23,7 +23,7 @@ We evaluate and benchmark on SplitFS using different application benchmarks like
 
 ### Kernel Setup
 
-1. kernel: `cd scripts/kernel-setup; ./compile_kernel.sh; cd ..` -- This will compile the Linux 4.13.0 kernel along with loadable modules for NOVA and PMFS. It will also install the kernel after compiling. Run with `sudo` 
+1. kernel: `cd scripts/kernel-setup; ./compile_kernel.sh; cd ..` -- This will compile the Linux 4.13.0 kernel along with loadable modules for NOVA and PMFS.  It will also build a kernel debian package which should be installed with dpkg.
 2. PM Emulation: 
     * Open `/etc/default/grub`
     * modify `GRUB_DEFAULT=0` to `GRUB_DEFAULT="Advanced options for Ubuntu>Ubuntu, with Linux 4.13.0"`
