@@ -7,14 +7,21 @@ dependencies/jdk1.8.0_221/
 kernel/kbuild/*
 *.o
 tpcc-sqlite/database/
+tpcc-sqlite/tpcc_load
+tpcc-sqlite/tpcc_start
 core
 sqlite3-trace/.libs
 *output*
 *trace*
 *swp
+*deb
+*.changes
 
 rsync/workload/
 rsync/rsync
+rsync/autom4te.cache/requests
+rsync/config.log
+rsync/config.status
 
 !ycsb/core
 !ycsb/tracerecorder
