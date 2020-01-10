@@ -4,6 +4,11 @@ src_dir=`readlink -f ../../`
 cur_dir=`readlink -f ./`
 setup_dir=`readlink -f ../configs`
 pmem_dir=/mnt/pmem_emul
+pmem_dev=$1
+
+if [ -z "$pmem_dev" ] ; then
+        pmem_dev="/dev/pmem0"
+fi
 
 run_ycsb()
 {
@@ -30,22 +35,22 @@ run_ycsb()
     done
 }
 
-sudo $setup_dir/dax_config.sh
+sudo $setup_dir/dax_config.sh "$pmem_dev"
 run_ycsb dax
 
-sudo $setup_dir/xfs_config.sh
+sudo $setup_dir/xfs_config.sh "$pmem_dev"
 run_ycsb xfs
 
-sudo $setup_dir/nova_relaxed_config.sh
+sudo $setup_dir/nova_relaxed_config.sh "$pmem_dev"
 run_ycsb relaxed_nova
 
-sudo $setup_dir/pmfs_config.sh
+sudo $setup_dir/pmfs_config.sh "$pmem_dev"
 run_ycsb pmfs
 
-sudo $setup_dir/nova_config.sh
+sudo $setup_dir/nova_config.sh "$pmem_dev"
 run_ycsb nova
 
-sudo $setup_dir/dax_config.sh
+sudo $setup_dir/dax_config.sh "$pmem_dev"
 run_ycsb boost
 
 :'
